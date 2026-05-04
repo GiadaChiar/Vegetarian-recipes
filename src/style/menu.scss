@@ -1,0 +1,18 @@
+
+@use 'variables' as vars;
+
+
+.navbar-toggler{
+    color: vars.$color2 !important;
+
+    &:hover{
+        color: vars.$color3 !important;
+    }
+
+}
+
+
+.nav-link{
+    font-size: vars.$font-size4;
+
+}
