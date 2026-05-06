@@ -22,20 +22,20 @@ export default function SearchBar() {
         <div className="input-group mb-3">
             <Label
             htmlfor="name_search"
-            nameClass="form-control"
+            nameClass="form-control label"
             label="Find your recipe"
             ></Label>
 
             <Input
             id="name_search"
-            nameClass="form-control"
+            nameClass="form-control input"
             placeholder="Recipient's username"
                 />
                 
             <Button
             label="Send"
             onClick={handleSendFirstBtn}
-            variant="btn btn-primary w-100"
+            variant="btn btn-primary"
                 />
                 
         </div>

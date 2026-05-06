@@ -1,6 +1,9 @@
 import "../style/global.scss";
+import "../style/search.scss";
+import "../style/cart.scss";
 import SearchBar from "../components/searchbar";
 import FiltersCollapse from "../components/filterCollapse";
+import Cart from "../components/cart";
 
 
 
@@ -11,16 +14,15 @@ function Search() {
 
   return (
     <>
-      <div id ="green_background">
-        <div style={{ marginTop: "100px" }}>
-          <h1>Are you ready to cook?</h1>
-        </div>
-
+      <div style={{ marginTop: "100px", marginBottom : "50px "}}>
+        <h1>Are you ready to cook?</h1>
+      </div>
+      <div id="green_background">
         <SearchBar />
 
         <FiltersCollapse />
-        
-    </div>
+        <Cart/>
+      </div>
     </>
   );
 }

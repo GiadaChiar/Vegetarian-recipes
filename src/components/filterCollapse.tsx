@@ -26,7 +26,7 @@ export default function FiltersCollapse() {
             
         <button className="btn btn-primary" id="filterButton" type="button" data-bs-toggle="collapse"
             data-bs-target="#filterCollapse" aria-expanded="false" aria-controls="filterCollapse">
-            Filtri
+            Filters
         </button>
 
         <div className="collapse" id="filterCollapse">
@@ -74,16 +74,17 @@ export default function FiltersCollapse() {
                         
                     </div>
                 
-                    <div className="inLine">
-                        <Label 
-                        label = "INGRIDIENT"
-                        htmlfor = "serach_ingridient"
-                        nameClass = "form-control"
+                    <div className="input-group mb-3">
+                            <Label 
+                        label = "Ingridient"
+                        htmlfor = "search_ingridient"
+                        nameClass = "form-control label"
                         />
-
+                        
+                            
                         <Input
-                            id="serach_ingridient"
-                            nameClass="form-control"
+                            id="search_ingridient"
+                            nameClass="form-control input"
                             placeholder="carrots"
                         />
 

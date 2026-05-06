@@ -1,0 +1,155 @@
+@use 'variables' as vars;
+
+h1{
+    font-family: vars.$font1;
+    text-decoration: underline;
+    font-weight: 800;
+}
+
+#green_background{
+
+    background-color: vars.$color3;
+    height: 100%;
+    .input-group.mb-3{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-around;
+        gap:10px;
+        margin-top: 40px;
+
+        .form-control.label{
+            color:vars.$color2;
+            font-family: vars.$font2;
+            font-weight: 800;
+            font-size: vars.$font-size5;
+            
+        }
+    }
+}
+
+//standard label 
+.form-control.label{
+            background-color: transparent;
+            font-family: vars.$font1;
+            border: none;
+            font-weight: 550;
+        }
+
+
+
+//standard input 
+.form-control.input{
+    background-color: vars.$color1;
+    border: 2px solid vars.$color2;
+    border-radius: 50px / 100% !important;
+    width: auto;
+    
+}
+
+//standard button 
+
+.btn.btn-primary{
+    background-color: vars.$color4;
+    font-family: vars.$font2;
+    border: 2px solid transparent;
+    border-radius: 50px / 100% !important;
+    color:vars.$color2;
+    width: auto !important;
+    font-weight: 450;
+    margin-right: 35px;
+
+    &:hover{
+        background-color: vars.$color5;
+    }
+
+}
+
+//filter collapse
+
+#filterButton{
+    background-color: transparent;
+    color:vars.$color1;
+    border:none;
+    text-decoration: underline;
+    font-family: vars.$font1;
+    font-size: vars.$font-size5;
+    display: block;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    &:hover{
+        color: vars.$color4;
+    }
+
+}
+
+//standard dropdown
+.dropdown{
+    .btn.btn-secondary.dropdown-toggle{
+        background-color: vars.$color3;
+        margin-top: 20px;
+        margin-bottom: 60px;
+    }
+
+    .dropdown-menu {
+        padding: 0px;
+        text-align: center;
+        margin-bottom: 0px !important;
+
+    .dropdown-item {
+        background-color: vars.$color1;
+        border: 1px solid vars.$color2;
+        width: 90%;
+        padding-bottom: 20px;
+
+        &:hover{
+        background-color: vars.$color4;
+        }
+    }
+
+
+    }
+}
+
+
+.dropdown-menu li:last-child .dropdown-item {
+    padding-bottom: 10px;
+}
+
+
+//class in line 
+
+.inLine{
+    display: flex;
+    flex-wrap: wrap;
+    gap:15px;
+    align-items: center;
+    justify-content: space-around;
+    
+    
+}
+
+
+/* Responsive */
+/*pc */
+@media (max-width: 700px) {
+    .input-group.mb-3{
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center;
+        gap:10px !important;
+
+    
+
+    .form-control.label{
+        white-space: nowrap;
+        text-align: center;
+        font-size: 25px !important;
+        font-weight: 200 !important;
+        width: 100%;
+
+    }
+    }
+
+
+}

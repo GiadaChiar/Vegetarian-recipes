@@ -1,0 +1,68 @@
+@use 'variables' as vars;
+
+.cart{
+    background-color: vars.$color1;
+    padding: 0px;
+    width: 350px;
+    height: 350px;
+    margin-bottom: 150px;
+    border: 1px solid vars.$color2;
+    border-radius: 15%;
+    margin: auto;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+    overflow: hidden;
+    margin-bottom: 150px;
+
+
+    .imgCart{
+        width: 100%;
+        height: 150px;
+        overflow: hidden;
+        background: 5%;
+        
+        
+        img{
+            display: block; 
+            object-fit: cover;
+            width: 100%;
+            height: 100%;
+            transition: transform 0.5s ease;
+            border-bottom: 2px solid black;
+            border-radius: 0%  0% 32% ;
+
+            &:hover{
+                transform: scale(1.4);
+                transition: transform 2s ease;
+                
+
+            }
+        }
+
+    }
+    .nameCart h3{
+        margin-bottom: 2px;
+    }
+    .timeCard{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap:10px;
+        img{
+            height: 80px;
+            width: auto;
+        }
+        p{
+            font-size: 25px;
+        }
+    }
+
+    .starSection{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap:10px;
+        .star{
+            height: 30px;
+        }
+    }
+}

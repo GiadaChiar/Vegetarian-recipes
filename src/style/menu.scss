@@ -11,6 +11,9 @@
 
 }
 
+.navbar.navbar-dark.bg-dark.fixed-top{
+    z-index: 9999;
+}
 
 .nav-link{
     font-size: vars.$font-size4;
