@@ -4,7 +4,7 @@
     background-color: vars.$color1;
     padding: 0px;
     width: 350px;
-    height: 350px;
+    height: 400px;
     margin-bottom: 150px;
     border: 1px solid vars.$color2;
     border-radius: 15%;
@@ -12,6 +12,20 @@
     box-shadow: 0 10px 20px rgba(0,0,0,0.3);
     overflow: hidden;
     margin-bottom: 150px;
+    margin-top: 150px;
+
+
+
+    //add
+    position: absolute;
+    transform-origin: 50% 60%;
+
+
+
+    &:hover{
+                transform: scale(1.1);
+                transition: transform 2s ease;
+            }
 
 
     .imgCart{
@@ -39,18 +53,29 @@
         }
 
     }
-    .nameCart h3{
+    .nameCart a{
         margin-bottom: 2px;
+        font-family: vars.$font2;
+        font-size: vars.$font-size5;
+
+        &:hover{
+            text-decoration: underline;
+            cursor: pointer;
+            color: vars.$color5;
+        }
     }
+
     .timeCard{
         display: flex;
         justify-content: center;
         align-items: center;
         gap:10px;
+
         img{
             height: 80px;
             width: auto;
         }
+
         p{
             font-size: 25px;
         }
@@ -61,8 +86,167 @@
         justify-content: center;
         align-items: center;
         gap:10px;
-        .star{
-            height: 30px;
-        }
+        
     }
 }
+
+
+
+
+//moving effect cart 
+//move < >
+.carousel{
+    position: relative;
+    display: grid;
+    place-items: center;
+    perspective: 1600px;
+    padding: 12px 64px;
+    
+    //element
+    .nav{
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 50px; 
+        height: 42px;
+        border-radius: 10px;
+        border:1px solid var(--stroke-1);
+        background: linear-gradient(180deg, rgba(255,255,255,0.12), rgba(255,255,255,0.06));
+        color: vars.$color2;
+        box-shadow: var(--shadow-2), inset 0 1px 0 rgba(255,255,255,.06);
+        backdrop-filter: blur(10px) saturate(1.1);
+        -webkit-backdrop-filter: blur(10px) saturate(1.5);
+        cursor: pointer;
+        font-size: 30px; 
+        line-height:1;
+        display: grid; 
+        place-items: center;
+        z-index: 20;
+
+        &:hover{
+            background: linear-gradient(180deg, rgba(34, 55, 39, 0.12), rgba(27, 25, 25, 0.06));
+        }
+
+        
+    }
+    //positions < >
+    .prev{
+            left: 25px;
+        }
+
+        .next{
+            right: 25px;
+        }
+
+
+    .deck{
+        position: relative;
+        width: min(360px, 88vw);
+        height: 520px;
+        transform-style: preserve-3d;
+        margin-bottom: 150px;
+
+    }
+}
+
+
+
+//rotate carts 
+
+
+
+
+
+
+
+//Animation carts
+
+
+.cart.number1{
+    background-color: orange;
+    transform: translate3d(0,0,0) rotateZ(0deg) scale(1); z-index: 6;
+    opacity: 1; 
+    z-index: 99;
+    filter: none; 
+}
+
+
+.cart.number2 {
+    background-color: violet;
+    transform: translate3d(110px,12px,-160px) rotateZ(4deg) scale(.96); 
+    z-index: 5; 
+    opacity: 0.98; 
+    filter: saturate(0.98) brightness(0.98); 
+}
+
+
+.cart.number3 {
+    background-color: red;
+    transform: translate3d(160px,28px,-200px) rotateZ(6deg) scale(0.92); 
+    z-index: 4; 
+    opacity: 0.94; 
+    filter: saturate(0.95) brightness(0.94);
+}
+
+
+
+.cart.number4 {
+    background-color: blue;
+    transform: translate3d(-160px,28px,-200px) rotateZ(-6deg) scale(0.92); 
+    z-index: 4; 
+    opacity: 0.94; 
+    filter: saturate(0.95) brightness(0.94); 
+}
+
+
+
+.cart.number5{
+    background-color: yellow;
+    transform: translate3d(-110px,10px,-160px) rotateZ(-4deg) scale(0.96); 
+    z-index: 5; 
+    opacity: 0.98; 
+    filter: saturate(0.98) brightness(0.98);
+}
+
+
+
+
+
+
+
+//star color
+
+
+.bi.bi-star-fill{
+    font-size: 25px;
+}
+
+
+    .bi.bi-star-fill.starIcon.startblack{
+        background: black;
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+    }
+
+    .bi.bi-star-fill.starIcon.starYellow{
+        background: yellow;
+        -webkit-background-clip: text;
+        background-clip: text;
+
+        color: transparent;
+    }
+
+    .bi.bi-star-fill.starIcon.starthalf{
+        background: linear-gradient(
+            to right,
+            gold 50%,
+            black 50%
+        );
+
+        -webkit-background-clip: text;
+        background-clip: text;
+
+        color: transparent;
+    }
+

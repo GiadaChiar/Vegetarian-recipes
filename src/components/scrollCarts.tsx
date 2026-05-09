@@ -1,0 +1,71 @@
+import FakeCarts from "../components/fakecarts";
+import { useState } from "react";
+
+
+
+
+
+export default function ScrollCarts() {
+    const [positions, setPositions] = useState([
+        "number1",
+        "number2",
+        "number3",
+        "number4",
+        "number5",
+    ]);
+
+    const handlebutton = (e: React.MouseEvent<HTMLButtonElement>) => {
+        const classButton = e.currentTarget.className;
+
+        if (classButton === "nav prev") {
+        setPositions((prev) => {
+            const last = prev[prev.length - 1];
+            return [last, ...prev.slice(0, -1)];
+        });
+        } else if (classButton === "nav next") {
+        setPositions((prev) => {
+            const [first, ...rest] = prev;
+            return [...rest, first];
+        });
+        }
+    };
+
+    return (
+        <div className="carousel">
+        <button onClick={handlebutton} className="nav prev">
+            ‹
+        </button>
+
+        <div className="deck">
+            <FakeCarts positions={positions} />
+        </div>
+
+        <button onClick={handlebutton} className="nav next">
+            ›
+        </button>
+        </div>
+    );
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
