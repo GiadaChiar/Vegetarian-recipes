@@ -1,20 +1,16 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Menu from "./components/menu"
-import HomePage from "./pages/home";
-import Search from "./pages/search";
-import Recipe from "./pages/recipe";
+import { BrowserRouter} from "react-router-dom";
+import Menu from "./components/menu";
+import NavigationRoots from "./router/router";
 
 
-function App(){
+
+
+function App() {
   return (
     <>
       <BrowserRouter>
         <Menu />
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/search" element={<Search />} />
-          <Route path="/recipe" element={<Recipe />} />
-        </Routes>
+        <NavigationRoots/>
       </BrowserRouter>
     </>
   );

@@ -7,12 +7,12 @@ import RealCart from "./realCart";
 
 
 type FakeCardsProps = {
-  positions: string[];
+    positions: string[];
 };
 
 
 export default function RecipeSection({ positions }: FakeCardsProps) {
-  const recipes = useSelector((state: any) => state.recipe.recipes);
+    const recipes = useSelector((state: any) => state.recipe.recipes);
 
   //const positions = ["number1", "number2", "number3", "number4", "number5"];
 

@@ -1,0 +1,126 @@
+@use 'variables' as vars;
+
+#title_recipe{
+    font-family: vars.$font2;
+    text-decoration: none;
+    text-align: center;
+    margin:10px;
+    margin-bottom: 30px;
+}
+
+//block at the top of the page 
+
+.square_top{
+        display: flex;
+        gap:0px;
+        margin-right: 20px;
+        margin-left: 20px;
+        justify-content: center;
+        width: 90%;
+.block{
+    
+    border-top: 2px  solid black ;
+    border-bottom: 2px  solid black ;
+    height: 200px;
+    width: 500px;
+    padding-top: 25px;
+
+    img{
+        height: 65px;
+        width: auto;
+    }
+    h4{
+        text-decoration: wavy;
+    }
+    p{ 
+        font-size: vars.$font-size6;
+    }
+}
+
+.block:nth-child(2){
+    border-left: 2px  solid black; 
+    border-right: 2px  solid black ; 
+}
+}
+
+//big recipe image
+.imgContainer{
+    width: 90%;
+    height: 420px;
+    margin: 10px;
+    margin-bottom: 30px;
+    img{
+        display: block;
+        object-fit: cover;
+        width: 100%;
+    }
+}
+
+
+// SECOND PART RECIPES
+.secondPart{
+    display: flex;
+    width: 100%;
+    margin-top: 100px;
+
+
+    .leftGreen{
+        background-color: vars.$color3;
+        width: 100%;
+        
+        
+
+        .left{
+            background-color: vars.$color1;
+            margin: 20px;
+            
+
+
+            img{
+                height: 200px;
+                width: auto;
+            }
+
+            ul li::marker {
+            color: vars.$color3;
+            }
+
+            li{
+                padding-bottom: 5px;
+                font-family: vars.$font1;
+                font-size: vars.$font-size6;
+                text-align: left;
+                margin-right: 10px;
+
+            }
+        }
+    }
+
+    .right{
+        display: block;
+        h2{
+            text-align: center;
+            margin-bottom: 25px;
+            margin-top: 10px;
+            font-family: vars.$font2;
+            text-decoration: underline;
+            font-weight: 600;
+            color: vars.$color3;
+        }
+
+        ol li::marker {
+            color: vars.$color3;
+            font-weight: bold;
+        }
+
+        ol>li{
+            padding-bottom: 25px;
+            margin-left: 10px;
+            margin-right: 30px;
+            font-family: vars.$font1;
+            font-size: vars.$font-size6;
+            text-align: left;
+        }
+    }
+
+}
