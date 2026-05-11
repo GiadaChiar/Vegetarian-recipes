@@ -21,8 +21,8 @@ export function FirstBigBlock({recipe}: FirstBigBlockProps) {
                 <BlockRecipe
                     classEl="block"
                     icon="/images/meat.png"
-                    description="Kilo Cal"
-                    value={`${recipe.calories} Kcal`}
+                    description="Cuisine"
+                    value={recipe.cuisines}
                 />
 
                 <BlockRecipe

@@ -8,7 +8,7 @@ import recipeReducer from "./recipeSlice";
 
 
 
-export const apiKey = "ac889ed08a0642c99d7655ba1ee3fee8";
+export const apiKey = "c211551bde704b19b5cec9962d296bc5";
 
 export const store = configureStore({
     reducer: {

@@ -4,7 +4,7 @@
     font-family: vars.$font2;
     text-decoration: none;
     text-align: center;
-    margin:10px;
+    margin:10px 0px 0px 10px;
     margin-bottom: 30px;
 }
 
@@ -13,8 +13,7 @@
 .square_top{
         display: flex;
         gap:0px;
-        margin-right: 20px;
-        margin-left: 20px;
+        margin:auto;
         justify-content: center;
         width: 90%;
 .block{
@@ -45,14 +44,17 @@
 
 //big recipe image
 .imgContainer{
-    width: 90%;
-    height: 420px;
-    margin: 10px;
-    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 500px;
+    background-color: vars.$color3;
+    border-bottom: 1px solid black;
     img{
         display: block;
         object-fit: cover;
-        width: 100%;
+        height:100%;
     }
 }
 
@@ -61,7 +63,7 @@
 .secondPart{
     display: flex;
     width: 100%;
-    padding-top: 150px ;
+    padding-top: 50px ;
 
 
     .leftGreen{
@@ -73,6 +75,7 @@
         .left{
             background-color: vars.$color1;
             margin: 20px;
+            text-align: center;
             
 
 
@@ -90,7 +93,7 @@
                 font-family: vars.$font1;
                 font-size: vars.$font-size6;
                 text-align: left;
-                margin-right: 10px;
+                margin: auto;
 
             }
         }
@@ -128,4 +131,82 @@
 
 }
 
+
+
+@media (max-width: 800px) {
+    .secondPart{
+        display: block;
+        .leftGreen{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 50px;
+            
+            .left{
+                padding: 10px;
+            }
+        }
+
+        .right{
+            margin: auto;
+        }
+}
+}
+
+
+
+@media (max-width: 600px) {
+
+    .square_top{
+        display: block;
+
+        .block{
+            max-width: 100%;
+        }
+
+        .block:nth-child(2){
+            border-left: none; 
+            border-right: none; 
+        }
+    }
+
+    .imgContainer{
+        max-width: 90%;
+        margin: auto;
+
+        .img{
+            object-fit: cover;
+            height: max-content;
+
+        }
+    }
+
+
+
+
+
+
+    .secondPart{
+        margin: 0px;
+        padding: 0px;
+        display: block;
+        .leftGreen{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-bottom: 50px;
+            
+            .left{
+                padding: 10px;
+            }
+        }
+
+        .right{
+            margin:10px;
+            padding: 0px;
+            display: block;
+            justify-self: center;
+        }
+}
+}
 

@@ -11,10 +11,7 @@
     margin: auto;
     box-shadow: 0 10px 20px rgba(0,0,0,0.3);
     overflow: hidden;
-    margin-bottom: 150px;
     margin-top: 150px;
-
-
 
     //add
     position: absolute;
@@ -23,7 +20,7 @@
 
 
     &:hover{
-                transform: scale(1.1);
+                transform: scale(1.2);
                 transition: transform 2s ease;
             }
 
@@ -250,3 +247,30 @@
         color: transparent;
     }
 
+
+    //small diplay 
+
+    @media (max-width: 600px) {
+        .cart{
+            width: 300px;
+            height: 400px;
+        }
+
+        //change carts position;
+        .cart.number2 {
+            transform: translate3d(50px,12px,-160px) rotateZ(4deg) scale(.96); 
+        }
+
+        .cart.number5{
+            transform: translate3d(-50px,10px,-160px) rotateZ(-4deg) scale(0.96); 
+        }
+
+        
+        .cart.number3 {
+            transform: translate3d(80px,28px,-200px) rotateZ(6deg) scale(0.92); 
+        }
+
+        .cart.number4 {
+            transform: translate3d(-80px,28px,-200px) rotateZ(-6deg) scale(0.92); 
+        }
+    }

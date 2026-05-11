@@ -14,8 +14,6 @@ type FakeCardsProps = {
 export default function RecipeSection({ positions }: FakeCardsProps) {
     const recipes = useSelector((state: any) => state.recipe.recipes);
 
-  //const positions = ["number1", "number2", "number3", "number4", "number5"];
-
     return (
         <>
         {recipes.length === 0 ? (

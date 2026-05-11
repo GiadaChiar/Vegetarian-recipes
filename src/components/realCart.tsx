@@ -17,7 +17,6 @@ type RealCartProps = {
 
 
 
-
 export default function RealCart({
     extraClass,
     foodImage,
@@ -33,11 +32,19 @@ export default function RealCart({
     const halfStar = valueStar % 1 >= 0.5;
 
     const navigate = useNavigate();
-
+    
     const handleClick = () => {
         console.log("Cliccatooo codice ", code);
         //change page and pass my card code 
-        navigate(`/recipe/${code}`);
+        if (code) {
+            navigate(`/recipe/${code}`);
+            return;
+        }
+        else {
+            console.log("numero non trovato");
+            return
+        }
+        
     };
 
     return (
