@@ -1,19 +1,16 @@
 //standard cart and functionalities
 
-//import { apiKey } from "../redux/store";
-//import axios from "axios";
 import { useNavigate } from "react-router-dom";
+
 
 type RealCartProps = {
     extraClass: string;
     foodImage: string;
     nameText: string;
-    timeText: string;
-    healthy: string;
-    code: string;
+    timeText: number;
+    healthy: number;
+    code: number;
 };
-
-
 
 
 
@@ -34,14 +31,12 @@ export default function RealCart({
     const navigate = useNavigate();
     
     const handleClick = () => {
-        console.log("Cliccatooo codice ", code);
         //change page and pass my card code 
         if (code) {
             navigate(`/recipe/${code}`);
             return;
         }
         else {
-            console.log("numero non trovato");
             return
         }
         
@@ -49,7 +44,7 @@ export default function RealCart({
 
     return (
         <>
-        <div className={`cart ${extraClass || ""}`} id={code}>
+        <div className={`cart ${extraClass || ""}`} id={String(code)}>
             <div className="imgCart">
             <img src={foodImage} alt="food image recipe" />
             </div>
@@ -65,7 +60,7 @@ export default function RealCart({
 
             <div className="starSection">
             {[...Array(5)].map((_, index) => {
-                //star yellow
+                // yellow star
                 if (index < fullStars) {
                 return (
                     <i
@@ -74,7 +69,7 @@ export default function RealCart({
                     ></i>
                 );
                 }
-
+                //black and yellow star
                 if (index === fullStars && halfStar) {
                 return (
                     <i
@@ -83,8 +78,7 @@ export default function RealCart({
                     ></i>
                 );
                 }
-
-                //add logic half star
+                //black star
                 else {
                 return (
                     <i

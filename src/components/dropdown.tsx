@@ -30,7 +30,6 @@ export function DropDown({ label, id, options, onSelect }: DropdownProps) {
         e.preventDefault();
         setSelected(value);
         setSelected(label);
-        console.log("valore trovato:", value);
         onSelect(value, label);
     };
 

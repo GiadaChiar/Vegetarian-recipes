@@ -1,4 +1,4 @@
-// Estra filters in  Search page
+// Estra filters in the Search page
 
 //Big componet
 import Label from "./label";
@@ -37,11 +37,6 @@ export default function FiltersCollapse() {
 
     //function click fetch filters
     const handleSerchFilters = async () => {
-        console.log("CLICCATO FAI LA FETCH FILTRI");
-        console.log("input inserito:", getInput);
-        console.log("kcal inserito:", getKcal);
-        console.log("vitamin inserito:", getVitamin);
-        console.log("TEMPO INSERITO: ", getTime);
         //create a fetch
 
         if (
@@ -86,10 +81,9 @@ export default function FiltersCollapse() {
             const response = await axios.get(
                 `https://api.spoonacular.com/recipes/complexSearch?${params.toString()}`
             );
-            console.log(response)
 
             const results = response.data.results;
-            console.log(results);
+
             if (results.length === 0) { 
                 temporaryState(setEmpty, true, false);
                 return;
@@ -97,7 +91,7 @@ export default function FiltersCollapse() {
             dispatch(setRecipe(results));
         
         } catch {
-            temporaryState(setError,"Search failed, try again", "");
+            temporaryState<string>(setError,"Search failed, try again", "");
         } finally {
             setLoading(false);
         }
@@ -154,7 +148,7 @@ export default function FiltersCollapse() {
                     { label: "=< 60 min", value: "60" },
                     { label: "TIME", value: "" },
                     ]}
-                    //onSelect={(value) => console.log(value)}
+                    
                     onSelect={(value) => setTime(value)}
                 />
 

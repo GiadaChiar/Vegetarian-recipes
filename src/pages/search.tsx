@@ -1,13 +1,12 @@
-import "../style/global.scss";
+
 import "../style/search.scss";
 import "../style/cart.scss";
 import "../style/popUp.scss";
 import SearchBar from "../components/searchbar";
 import FiltersCollapse from "../components/filterCollapse";
-//import RecipeSection from "../components/cartSectionChoose";
 import ScrollCarts from "../components/scrollCarts";
 
-
+//search page
 
 function Search() {
   //function to send clicked to first button send
@@ -25,9 +24,6 @@ function Search() {
     </>
   );
 }
-
-
-
 
 
 export default Search;

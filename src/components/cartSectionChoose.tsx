@@ -3,6 +3,8 @@
 import { useSelector } from "react-redux";
 import FakeCarts from "./fakeCarts";
 import RealCart from "./realCart";
+import type { RootState } from "../redux/store"
+
 
 
 
@@ -10,27 +12,28 @@ type FakeCardsProps = {
     positions: string[];
 };
 
-
 export default function RecipeSection({ positions }: FakeCardsProps) {
-    const recipes = useSelector((state: any) => state.recipe.recipes);
+    const recipes = useSelector(
+        (state: RootState) => state.recipe.recipes
+    );
 
     return (
         <>
-        {recipes.length === 0 ? (
-            <FakeCarts positions={positions} />
-        ) : (
-            recipes.map((recipe: any, index: any) => (
-            <RealCart
-                key={recipe.id}
-                code={recipe.id}
-                extraClass={positions[index]}
-                foodImage={recipe.image}
-                nameText={recipe.title}
-                timeText={recipe.readyInMinutes}
-                healthy={recipe.healthScore}
-            />
-            ))
-        )}
+            {recipes.length === 0 ? (
+                <FakeCarts positions={positions} />
+            ) : (
+                recipes.map((recipe, index: number) => (
+                    <RealCart
+                        key={recipe.id}
+                        code={recipe.id}
+                        extraClass={positions[index]}
+                        foodImage={recipe.image}
+                        nameText={recipe.title}
+                        timeText={recipe.readyInMinutes}
+                        healthy={recipe.healthScore}
+                    />
+                ))
+            )}
         </>
     );
 }

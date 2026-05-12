@@ -9,10 +9,14 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import { apiKey } from "../redux/store";
 import { setRecipe } from "../redux/recipeSlice";
+import PopUp from "./popUp";
+import type { RootState, AppDispatch } from "../redux/store";
+import type { Recipe } from "../redux/recipeSlice";
+import temporaryState from "../components/functionState";
 
-//default id carts
-const DefaultCode = ["647563", "658914", "1096185", "63310", "661740"];
 
+// id / code of the default carts
+const DefaultCode = [647563, 658914, 1096185, 63310, 661740];
 
 
 
@@ -20,18 +24,20 @@ export default function RecipePage() {
 
     const { id } = useParams();
 
-    const dispatch = useDispatch();
+    const dispatch = useDispatch<AppDispatch>();
 
-    // fallback empty array 
+    //get stored recipes
     const recipes = useSelector(
-        (state: any) => state.recipe.recipes
-    ) || [];
+        (state: RootState) => state.recipe.recipes
+    );
 
+    //check state api
     const [loading, setLoading] = useState(false);
+    const [error, setError] = useState("");
 
     //find right recipe
     const recipe = recipes.find(
-        (item: any) => item.id === Number(id)
+        (item) => item.id === Number(id),
     );
 
     useEffect(() => {
@@ -40,7 +46,7 @@ export default function RecipePage() {
         if (recipe) return;
 
         // else check id, if you don't have do the fetch 
-        const isDefault = DefaultCode.includes(String(id));
+        const isDefault = DefaultCode.includes(Number(id));
 
         if (!isDefault) return;
 
@@ -49,45 +55,46 @@ export default function RecipePage() {
             try {
 
                 setLoading(true);
+                setError("");
 
                 const response = await axios.get(
                     `https://api.spoonacular.com/recipes/${id}/information?apiKey=${apiKey}`
                 );
 
                 // get info
-                const result = response.data;
-
+                const result: Recipe = response.data;
                 // add in the store 
                 dispatch(
                     setRecipe([...recipes, result])
                 );
 
-            } catch (error) {
-
-                console.log(error);
-
+            } catch{
+                //popup error
+                temporaryState<string>(setError,"Search failed, try again", "");
             } finally {
-
+                //stop popUp loading
                 setLoading(false);
-
             }
         };
-
         fetchRecipe();
 
-    }, [id, recipe]);
-
-    if (loading) {
-        return <p>Loading...</p>;
-    }
+    }, [id, recipe, dispatch, recipes]);
 
     // upload recipe 
     const updatedRecipe = recipes.find(
-        (item: any) => item.id === Number(id)
+        (item: Recipe) => item.id === Number(id)
     );
 
+    if (loading) {
+        return <PopUp alert="Loading..." message="" />;
+    }
+
+    if (error) {
+        return <PopUp alert="Error" message={error} />;
+    }
+
     if (!updatedRecipe) {
-        return <p>RICETTA NON TROVATA</p>;
+        return <p>RECIPE NOT FOUND</p>;
     }
 
     return (

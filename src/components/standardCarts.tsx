@@ -1,3 +1,5 @@
+//default standard carts
+
 export const Standardcarts = [
   {
     foodImage: "https://img.spoonacular.com/recipes/649944-312x231.jpg",

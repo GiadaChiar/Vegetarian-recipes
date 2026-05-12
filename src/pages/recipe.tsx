@@ -1,9 +1,8 @@
-import "../style/global.scss";
+
 import "../style/recipe.scss";
-
 import RecipePage from "../components/getIdRecipe";
-//import FAKEFirstBigBlock from "../components/FAKEfirstBLPOCK";
 
+//recipe page 
 function Recipe() {
   return (
     <>

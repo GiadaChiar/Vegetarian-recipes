@@ -1,21 +1,17 @@
 
 
 import "../style/home.scss";
-import "../style/global.scss";
 import { useNavigate } from "react-router-dom";
 import Form from "../components/form";
 import Button from "../components/button";
 
 
-
-
-
+// home page 
 
 function Home() {
     const navigate = useNavigate()
 
     const handleHomeButton = () => {
-        console.log("CLICCATO BOTTONE HOME")
         navigate("/search")
     }
     return (

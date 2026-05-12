@@ -1,4 +1,4 @@
-//default block top page Recipes 3 times used
+//default block top page Recipes 3 times used ( first section recipe page)
 //image, description and value
 
 

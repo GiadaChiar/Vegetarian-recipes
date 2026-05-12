@@ -1,10 +1,42 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 
-// standard info recipes 
-const initialState = {
+export type Ingredient = {
+    id: number;
+    original: string;
+};
+
+export type InstructionStep = {
+    number: number;
+    step: string;
+};
+
+export type Recipe = {
+    id: number;
+    title: string;
+    image: string;
+    readyInMinutes: number;
+    healthScore: number;
+
+    cuisines: string[];
+    servings: number;
+
+    extendedIngredients: Ingredient[];
+
+    analyzedInstructions: {
+        steps: InstructionStep[];
+    }[];
+};
+
+export type RecipeState = {
+    recipes: Recipe[];
+};
+
+const initialState: RecipeState = {
     recipes: [],
 };
+
+
 
 
 const recipeSlice = createSlice({

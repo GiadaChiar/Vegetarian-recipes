@@ -1,10 +1,28 @@
-// Big block about Recepice the fist one on the Top
+// Big block about Recepice the fist part one on the Top
 
 import BlockRecipe from './blockRecipeTop';
 
-type FirstBigBlockProps = {
-    recipe: any;
+
+
+export type Recipe = {
+    id: number;
+    title: string;
+    readyInMinutes: number;
+    cuisines: string |string[];
+    servings: number;
+    image: string;
+    healthScore: number;
 };
+
+
+type FirstBigBlockProps = {
+    recipe: Recipe;
+};
+
+
+
+
+
 
 export function FirstBigBlock({recipe}: FirstBigBlockProps) {
     return (
@@ -22,14 +40,16 @@ export function FirstBigBlock({recipe}: FirstBigBlockProps) {
                     classEl="block"
                     icon="/images/meat.png"
                     description="Cuisine"
-                    value={recipe.cuisines}
+                    value={Array.isArray(recipe.cuisines)
+                        ? recipe.cuisines.join(", ")
+                        : recipe.cuisines}
                 />
 
                 <BlockRecipe
                     classEl="block"
                     icon="/images/fork.png"
                     description="Servings"
-                    value={recipe.servings}
+                    value={recipe.servings.toString()}
                 />
             </div>
             <div className='imgContainer'>

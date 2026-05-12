@@ -7,7 +7,6 @@ import { useState } from "react";
 import { apiKey } from "../redux/store";
 import axios from "axios";
 import  PopUp  from "./popUp"
-
 //save sesults into redux
 import { useDispatch } from "react-redux";
 import { setRecipe } from "../redux/recipeSlice";
@@ -18,13 +17,10 @@ import temporaryState  from "../components/functionState";
 export default function SearchBar() {
 
     const [getInput, setInput] = useState("");
-
     const dispatch = useDispatch();
-
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState("");
     const [empty, setEmpty] = useState(false);
-
 
         const handleSendFirstBtn = async () => {
             if (getInput === "") return
@@ -34,16 +30,11 @@ export default function SearchBar() {
             setLoading(true);
             setError("");
 
-        
-            console.log("INPUT Nome : ", getInput)
             const res = await axios.get(
                 `https://api.spoonacular.com/recipes/complexSearch?diet=vegetarian&query=${getInput}&addRecipeInformation=true&instructionsRequired=true&fillIngredients=true&nutrition=true&number=5&apiKey=${apiKey}`,
             );
 
-            
-            console.log(res)
             const results = res.data.results
-            console.log(results)
 
             //if it is empty []
             if (results.length === 0) {
@@ -54,14 +45,12 @@ export default function SearchBar() {
             dispatch(setRecipe(results));
 
         }catch {
-            temporaryState(setError,"Search failed, try again", "");
+            temporaryState<string>(setError,"Search failed, try again", "");
 
         } finally {
             setLoading(false);
         }
 };
-            
-    
     return (
         <>
             {loading && (

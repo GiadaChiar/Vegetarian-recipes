@@ -1,11 +1,13 @@
 
 
-//Last part of recipe page 
+//Last part of recipe page
 
+import type { Recipe, Ingredient, InstructionStep } from "../redux/recipeSlice";
 
 type SecondBigBlockProps = {
-    recipe: any
+    recipe: Recipe
 };
+
 
 
 export default function SecondBigBlock({ recipe }: SecondBigBlockProps) {
@@ -18,7 +20,7 @@ export default function SecondBigBlock({ recipe }: SecondBigBlockProps) {
                 <img src="/images/food.png" alt="vegetable Ingridients" />
 
                 <ul>
-                {recipe.extendedIngredients?.map((ingridient: any) => (
+                {recipe.extendedIngredients?.map((ingridient: Ingredient) => (
                     <li key={ingridient.id}>{ingridient.original}</li>
                 ))}
                 </ul>
@@ -28,7 +30,7 @@ export default function SecondBigBlock({ recipe }: SecondBigBlockProps) {
                 <div className="right">
                     <h2>PREPARATIONS:</h2>
                     <ol>
-                        {recipe.analyzedInstructions?.[0]?.steps?.map((step: any) => (
+                        {recipe.analyzedInstructions?.[0]?.steps?.map((step: InstructionStep) => (
                             <li key={step.number}>{step.step}</li>
                         ))}
                     </ol>

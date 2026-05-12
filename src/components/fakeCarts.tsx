@@ -18,12 +18,12 @@ export default function FakeCarts({ positions }: FakeCardsProps) {
             return (
             <RealCart
                 key={cart.code}
-                code={cart.code}
+                code={Number(cart.code)}
                 extraClass={positions[index]}
                 foodImage={cart.foodImage}
                 nameText={cart.nameText}
-                timeText={cart.timeText}
-                healthy={cart.healthy}
+                timeText={Number(cart.timeText)}
+                healthy={Number(cart.healthy)}
             />
             );
         })}

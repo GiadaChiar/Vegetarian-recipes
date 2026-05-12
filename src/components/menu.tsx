@@ -1,7 +1,5 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
-
-//style
 import "../style/menu.scss";
 
 //dynamic menu + change text in base of window screen
