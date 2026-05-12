@@ -3,6 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
+  "homepage": "https://GiadaChiar.github.io/vegetarian-recipes",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
@@ -34,7 +35,6 @@
     "sass-embedded": "^1.99.0",
     "typescript": "~6.0.2",
     "typescript-eslint": "^8.58.2",
-    "vite": "^8.0.10",
-    "homepage": "https://GiadaChiar.github.io/vegetarian-recipes"
+    "vite": "^8.0.10"
   }
 }
